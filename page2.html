@@ -1,7 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
-    <title>Page 2</title>
+  <meta charset="UTF-8">
+  <title>Sophie Bluel - Architecte d'intérieur</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap"
+    rel="stylesheet">
+    
+    <link rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" 
+    referrerpolicy="no-referrer">
+  <meta name="description" content="">
+  <link rel="stylesheet" href="./assets/style.css">
+  <link rel="stylesheet" href="./assets/login.css">
+  <link rel="stylesheet" href="./assets/modal.css">
+  
+  <script src="./js/script.js" defer></script>
+  <script src="./js/modal.js" defer></script>
+  <script src="./js/login.js"></script>
 </head>
 <body>
     <h1>Page 2</h1>
@@ -11,18 +31,16 @@
         <label for="password">Mot de passe:</label>
         <input type="password" id="password" required><br>
         <button type="button" id="loginButton">Se connecter</button>
-    </form>
+        <a href="index.html" id="hideElementLink">Accueil</a>    </form>
     
     <script>
-    // SCRIPT PAGE2
         document.getElementById('loginButton').addEventListener('click', () => {
             const enteredEmail = document.getElementById('email').value;
             const enteredPassword = document.getElementById('password').value;
             
+            // Remplacez cette condition par votre logique de validation de connexion
             if (enteredEmail === 'andre' && enteredPassword === '123') {
-                // Stockez l'information d'affichage dans le sessionStorage
                 sessionStorage.setItem('showElement', 'true');
-                // Redirigez vers la page 1
                 window.location.href = 'index.html';
             } else {
                 alert('Mot de passe ou email incorrect. Veuillez réessayer.');
