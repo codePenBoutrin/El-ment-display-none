@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Page 1</title>
+    
+    <style>
+    #hiddenElement {
+        background: red;
+        display: none;
+        width: 700px;
+        height: 50px;
+    }
+    
+    .page2{
+    
+    display: none;}
+    
+    </style>
+</head>
+<body>
+<div class="page1">
+    <h1 id="page1">Page 1</h1>
+    <div id="hiddenElement">
+        <div class="svg-container"></div>
+        <p>Mon texte</p>
+        <div class="button-publier-en-tete">
+            <a href="#"></a>
+        </div>
+    </div>
+    <a href="index.html" id="hideElementLink">Accueil</a>
+    <button id="goToPage2">Login</button>
+    </div>
+    
+    <div class="page2">
+    <h1 ">Page 2</h1>
+    <form id="loginForm">
+        <label for="email">Email:</label>
+        <input type="email" id="email" required><br>
+        <label for="password">Mot de passe:</label>
+        <input type="password" id="password" required><br>
+        <button type="button" id="loginButton">Se connecter</button>
+    </form>
+    </div>
+   
+    <script>
+    // SCRIPT-1
+        document.getElementById('goToPage2').addEventListener('click', () => {
+            window.location.href = 'page2.html';
+        });
+
+        // Ajoutez un écouteur d'événement pour le lien "Accueil"
+        document.getElementById('hideElementLink').addEventListener('click', () => {
+            // Cachez l'élément avec l'ID "hiddenElement"
+            document.getElementById('hiddenElement').style.display = 'none';
+            // Stockez l'information d'affichage dans le sessionStorage
+            sessionStorage.setItem('showElement', 'false');
+        });
+
+        // Vérifiez si le sessionStorage contient l'information d'affichage
+        if (sessionStorage.getItem('showElement') === 'true') {
+            document.getElementById('hiddenElement').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
